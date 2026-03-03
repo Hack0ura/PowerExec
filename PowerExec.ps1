@@ -423,7 +423,7 @@ Function Local:New-PowerExec {
     $output = $null
     switch ($Method) {
         'WinRM' {
-            $psOption = New-PSSessionOption -NoMachineProfile -OperationTimeout $($Timeout*1000)
+            $psOption = New-PSSessionOption -NoMachineProfile -OperationTimeout $($Timeout*1000) -ProxyAccessType NoProxyServer
             if ($Credential.Username) {
                 $psSessions = New-PSSession -ComputerName $ComputerList -Credential $Credential -Authentication $Authentication -SessionOption $psOption -ErrorAction SilentlyContinue
             }
