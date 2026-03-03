@@ -280,7 +280,6 @@ Function Local:Invoke-DownloadByte {
         }
         $client = [Net.WebRequest]::Create($URL)
         $client.Proxy = $null
-        $client.Proxy.Credentials = [Net.CredentialCache]::DefaultNetworkCredentials
         $client.UserAgent = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT; Windows NT 10.0; en-US)'
         $response = $client.GetResponse()
         $respStream = $response.GetResponseStream()
