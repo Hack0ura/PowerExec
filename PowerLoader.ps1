@@ -279,7 +279,7 @@ Function Local:Invoke-DownloadByte {
             [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls
         }
         $client = [Net.WebRequest]::Create($URL)
-        $client.Proxy = [Net.WebRequest]::GetSystemWebProxy()
+        $client.Proxy = $null
         $client.Proxy.Credentials = [Net.CredentialCache]::DefaultNetworkCredentials
         $client.UserAgent = 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT; Windows NT 10.0; en-US)'
         $response = $client.GetResponse()
